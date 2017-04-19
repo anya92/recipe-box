@@ -7,19 +7,19 @@ class SingleRecipe extends Component {
     const recipe = this.props.recipes.filter(recipe => recipe.id === id)[0];
     return (
       <div>
-        <h1>Single Recipe Component</h1>
         <h2>{recipe.title}</h2>
         <img src={recipe.image} alt={recipe.title} />
         <p>{recipe.description}</p>
-        <ul>
+        <div>
           {
             recipe.ingredients.map((ingredient, i) => {
               return (
-                <li key={i}>{ingredient}</li>
+                <p key={i}>{ingredient}</p>
               );
             })
           }
-        </ul>
+        </div>
+        <a>Edytuj</a>
       </div>
     );
   }

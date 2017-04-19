@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Recipe from './Recipe';
 import { loadRecipes } from '../actions';
 import sampleRecipes from '../sample-recipes';
 
@@ -13,22 +14,23 @@ class RecipeGrid extends Component {
     const { recipes } = this.props;
     return (
       <div>
-        <h2>Recipes Grid</h2>
-        <button
-          className="btn btn-default"
-          onClick={() => this.loadSampleRecipes()}
-        >
-        Load Sample Recipes
-        </button>
-        <ul>
+        {
+          recipes.length == 0
+          ? <button
+              className="btn btn-default"
+              onClick={() => this.loadSampleRecipes()}
+            >
+              Load Sample Recipes
+            </button>
+          : <div></div>  
+        }
+        <div>
           {
             recipes.map(recipe => {
-              return (
-                <li key={recipe.id}><Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>{recipe.image}, {recipe.description}, {recipe.ingredients}</li>
-              );
+              return <Recipe key={recipe.id} recipe={recipe} />;
             })
           }
-        </ul>
+        </div>
       </div>
     );
   }

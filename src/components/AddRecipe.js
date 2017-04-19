@@ -7,7 +7,7 @@ class AddRecipe extends Component {
   constructor(props) {
     super(props);
     
-    this. state = {
+    this.state = {
       title: '',
       image: '',
       ingredients: '',
