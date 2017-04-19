@@ -11,6 +11,7 @@ import Main from './components/Main';
 import RecipeGrid from './components/RecipeGrid';
 import AddRecipe from './components/AddRecipe';
 import SingleRecipe from './components/SingleRecipe';
+import Edit from './components/Edit';
 import NotFound from './components/NotFound';
 
 import reducer from './reducers';
@@ -23,7 +24,8 @@ const routes = (
       <Switch>
         <Route exact path="/" component={RecipeGrid}/>
         <Route path="/add" component={AddRecipe}/>
-        <Route path="/recipe/:recipeId" component={SingleRecipe}/>
+        <Route exact path="/recipe/:recipeId" component={SingleRecipe}/>
+        <Route path="/recipe/:recipeId/edit" component={Edit}/>
         <Route component={NotFound}/>
       </Switch>
     </div>

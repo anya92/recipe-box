@@ -27,9 +27,13 @@ export const deleteRecipe = (id) => {
   return action;
 };
 
-export const editRecipe = (id) => {
+export const editRecipe = (id, title, image, ingredients, description) => {
   const action = {
     type: EDIT_RECIPE,
+    title,
+    image,
+    ingredients,
+    description,
     id
   };
   return action;

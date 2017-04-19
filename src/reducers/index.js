@@ -17,6 +17,7 @@ const removeById = (state = [], id) => {
   return recipes;
 };
 
+
 const recipes = (state = [], action) => {
   let recipes = null;
   state = read_cookie('recipes');
@@ -34,6 +35,16 @@ const recipes = (state = [], action) => {
     recipes = removeById(state, action.id);
     bake_cookie('recipes', recipes);
     return recipes;
+  case EDIT_RECIPE:
+    const index = state.findIndex(recipe => recipe.id === action.id);
+    let { title, image, ingredients, description, id } = action;
+    const recipe = {
+      title, image, ingredients, description, id
+    };
+    recipes = removeById(state, action.id);
+    const newRecipes =  [ ...recipes, recipe ];
+    bake_cookie('recipes', recipes);
+    return recipes;  
   default:
     return state;
   }

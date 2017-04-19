@@ -1,10 +1,10 @@
-import React, { Component } from 'react'; /* eslint-disable */
+import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class SingleRecipe extends Component {
   render() {
-    const id = this.props.match.params.recipeId;
-    const recipe = this.props.recipes.filter(recipe => recipe.id === id)[0];
+    const { recipe } = this.props;
     return (
       <div>
         <h2>{recipe.title}</h2>
@@ -19,15 +19,17 @@ class SingleRecipe extends Component {
             })
           }
         </div>
-        <a>Edytuj</a>
+        <Link to={`/recipe/${recipe.id}/edit`}>Edytuj</Link>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+  const id = ownProps.match.params.recipeId;
+  const recipe = state.filter(recipe => recipe.id === id)[0];
   return {
-    recipes: state
+    recipe: recipe
   };
 }
 

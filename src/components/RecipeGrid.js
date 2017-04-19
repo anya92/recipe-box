@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Recipe from './Recipe';
 import { loadRecipes } from '../actions';
 import sampleRecipes from '../sample-recipes';
@@ -15,7 +15,7 @@ class RecipeGrid extends Component {
     return (
       <div>
         {
-          recipes.length == 0
+          recipes.length === 0
           ? <button
               className="btn btn-default"
               onClick={() => this.loadSampleRecipes()}
