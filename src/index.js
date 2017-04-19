@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
@@ -10,6 +12,9 @@ import App from './components/App';
 import AddRecipe from './components/AddRecipe';
 import SingleRecipe from './components/SingleRecipe';
 import NotFound from './components/NotFound';
+
+import reducer from './reducers';
+const store = createStore(reducer);
 
 const routes = (
   <Router>
@@ -25,4 +30,4 @@ const routes = (
   </Router>
 );
 
-render(routes, document.getElementById('root'));
+render(<Provider store={store}>{routes}</Provider>, document.getElementById('root'));
