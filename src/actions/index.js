@@ -1,4 +1,12 @@
-import { ADD_RECIPE, DELETE_RECIPE, EDIT_RECIPE } from '../constants';
+import { LOAD_RECIPES, ADD_RECIPE, DELETE_RECIPE, EDIT_RECIPE } from '../constants';
+
+export const loadRecipes = (sampleRecipes) => {
+  const action = {
+    type: LOAD_RECIPES,
+    sampleRecipes
+  };
+  return action;
+};
 
 export const addRecipe = (title, image, ingredients, description) => {
   const action = {

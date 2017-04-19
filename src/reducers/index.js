@@ -1,4 +1,4 @@
-import { ADD_RECIPE, DELETE_RECIPE, EDIT_RECIPE } from '../constants';
+import { LOAD_RECIPES, ADD_RECIPE, DELETE_RECIPE, EDIT_RECIPE } from '../constants';
 import { bake_cookie, read_cookie } from 'sfcookies';
 
 const recipe = (action) => {
@@ -22,6 +22,10 @@ const recipes = (state = [], action) => {
   state = read_cookie('recipes');
 
   switch(action.type) {
+  case LOAD_RECIPES:
+    recipes = [...state, ...action.sampleRecipes];
+    bake_cookie('recipes', recipes);  
+    return recipes;
   case ADD_RECIPE:
     recipes = [...state, recipe(action)];
     bake_cookie('recipes', recipes);

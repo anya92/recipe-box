@@ -8,7 +8,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
 
 import Main from './components/Main';
-import App from './components/App';
+import RecipeGrid from './components/RecipeGrid';
 import AddRecipe from './components/AddRecipe';
 import SingleRecipe from './components/SingleRecipe';
 import NotFound from './components/NotFound';
@@ -21,7 +21,7 @@ const routes = (
     <div>
       <Route component={Main} />
       <Switch>
-        <Route exact path="/" component={App}/>
+        <Route exact path="/" component={RecipeGrid}/>
         <Route path="/add" component={AddRecipe}/>
         <Route path="/recipe/:recipeId" component={SingleRecipe}/>
         <Route component={NotFound}/>
@@ -30,4 +30,9 @@ const routes = (
   </Router>
 );
 
-render(<Provider store={store}>{routes}</Provider>, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    {routes}
+  </Provider>, 
+  document.getElementById('root')
+);

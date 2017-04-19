@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addRecipe } from '../actions';
 
 class AddRecipe extends Component {
@@ -18,6 +19,7 @@ class AddRecipe extends Component {
     event.preventDefault();
     const ingredients = this.state.ingredients.split(',');
     this.props.addRecipe(this.state.title, this.state.image, ingredients,this.state.description);
+    this.props.history.push('/');
   }
 
   render() {
@@ -45,12 +47,12 @@ class AddRecipe extends Component {
           </div>
           <input type="submit" className="btn btn-lg btn-default" />
         </form>
+        <Link to="/" className="btn btn-lg btn-danger">Anuluj</Link>
       </div>
     );
   }
 }
 
-          // <Link to="/" className="btn btn-lg btn-danger">Anuluj</Link>
 // function mapStateToProps(state) {
 //   return {
 //     recipes: state

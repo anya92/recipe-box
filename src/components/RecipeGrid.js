@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loadRecipes } from '../actions';
+import sampleRecipes from '../sample-recipes';
 
-class App extends Component {
+class RecipeGrid extends Component {
+  loadSampleRecipes() {
+    this.props.loadRecipes(sampleRecipes);
+  }
+
   render() {
     const { recipes } = this.props;
     return (
       <div>
         <h2>Recipes Grid</h2>
+        <button
+          className="btn btn-default"
+          onClick={() => this.loadSampleRecipes()}
+        >
+        Load Sample Recipes
+        </button>
         <ul>
           {
             recipes.map(recipe => {
@@ -28,4 +40,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { loadRecipes })(RecipeGrid);
