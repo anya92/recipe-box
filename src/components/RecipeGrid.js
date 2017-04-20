@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Recipe from './Recipe';
 import { loadRecipes } from '../actions';
 import sampleRecipes from '../sample-recipes';
@@ -15,12 +16,11 @@ class RecipeGrid extends Component {
       <div>
         {
           recipes.length === 0
-          ? <button
-              className="btn btn-default"
-              onClick={() => this.loadSampleRecipes()}
-            >
-              Load Sample Recipes
-            </button>
+          ? <div className="row sample-recipes">
+              <a onClick={() => this.loadSampleRecipes()}>
+                Load Sample Recipes
+              </a>
+            </div>
           : <div></div>  
         }
         <div className="row">
@@ -30,6 +30,7 @@ class RecipeGrid extends Component {
             })
           }
         </div>
+        <Link to="/add" className="add-button">+</Link>
       </div>
     );
   }

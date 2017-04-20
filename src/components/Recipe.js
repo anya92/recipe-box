@@ -11,12 +11,16 @@ class Recipe extends Component {
   render() {
     const recipe = this.props.recipe;
     return (
-      <div className="col-md-4">
+      <div className="col-sm-6 col-md-4">
+      <figure className="recipe-list">
         <Link to={`/recipe/${recipe.id}`}>
-          <img src={recipe.image} alt={recipe.title} />
+          <img src={recipe.image} alt={recipe.title} className="responsive"/>
         </Link>
-        <p>{recipe.title}</p>
-        <a onClick={() => this.deleteRecipe(recipe.id)}>usuń</a>
+        <figcaption className="recipe-title"> 
+        <h2>{recipe.title}</h2>
+        <a onClick={() => this.deleteRecipe(recipe.id)}>&#x2715;</a>
+        </figcaption>
+        </figure>
       </div>
     );
   }
