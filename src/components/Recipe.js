@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import toastr from 'toastr';
 import { deleteRecipe } from '../actions';
 
 class Recipe extends Component {
+  confirmDelete() {
+    return confirm('Are you sure?');
+  }
+
   deleteRecipe(id) {
-    this.props.deleteRecipe(id);
+    if (this.confirmDelete()) {
+      this.props.deleteRecipe(id);
+      toastr.success('Deleted');
+    }
   }
 
   render() {

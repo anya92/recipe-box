@@ -24,7 +24,8 @@ class AddRecipe extends Component {
 
   render() {
     return (
-      <div>
+      <div className="add">
+      <h2>Dodaj nowy przepis</h2>
         <form 
         className="add-form col-md-6 col-md-offset-3"
         onSubmit={e => this.addRecipe(e)}>
@@ -35,19 +36,25 @@ class AddRecipe extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="ingredients">Składniki</label>
-            <textarea className="form-control" id="ingredients" placeholder="Składniki oddzielone przecinkiem" rows="2" onChange={e => this.setState({ ingredients: e.target.value})} />
+            <textarea className="form-control" id="ingredients" placeholder="Składniki oddzielone przecinkiem" rows="2" onChange={e => this.setState({ ingredients: e.target.value})} 
+            required/>
           </div>
           <div className="form-group">
             <label htmlFor="description">Opis potrawy</label>
-            <textarea className="form-control" id="description" placeholder="Opis" rows="3" onChange={e => this.setState({ description: e.target.value})}/>
+            <textarea className="form-control" id="description" placeholder="Opis" rows="3" onChange={e => this.setState({ description: e.target.value})}
+            required/>
           </div>
            <div className="form-group">
             <label htmlFor="image">Zdjęcie</label>
-            <input type="text" className="form-control" id="image" placeholder="https:\\ " onChange={e => this.setState({ image: e.target.value})}/>
+            <input type="text" className="form-control" id="image" placeholder="https:\\ " onChange={e => this.setState({ image: e.target.value})}
+            required/>
           </div>
-          <input type="submit" className="btn btn-lg btn-default" />
+          <div className="form-buttons">
+            <Link to="/" className="btn">ANULUJ</Link>
+            <a onClick={e => this.addRecipe(e)} className="btn">DODAJ</a>
+          </div>
         </form>
-        <Link to="/" className="btn btn-lg btn-danger">Anuluj</Link>
+        
       </div>
     );
   }

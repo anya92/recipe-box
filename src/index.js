@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/toastr/build/toastr.min.css';
 import './styles/styles.css';
 
 import Main from './components/Main';
