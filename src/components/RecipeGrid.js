@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 import Recipe from './Recipe';
 import { loadRecipes } from '../actions';
 import sampleRecipes from '../sample-recipes';
+
+
+// const Placeholder = () => {
+//   return (
+//     <div className="placeholder"></div>
+//   );
+// };
 
 class RecipeGrid extends Component {
   loadSampleRecipes() {
@@ -27,7 +34,11 @@ class RecipeGrid extends Component {
         <div>
           {
             recipes.map(recipe => {
-              return <Recipe key={recipe.id} recipe={recipe} />;
+              return (
+                <LazyLoad height={200} key={recipe.id}>
+                  <Recipe  recipe={recipe} />
+                </LazyLoad>  
+              );
             })
           }
         </div>

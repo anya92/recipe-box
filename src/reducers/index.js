@@ -42,7 +42,7 @@ const recipes = (state = [], action) => {
     bake_cookie('recipes', recipes);  
     return recipes;
   case ADD_RECIPE:
-    recipes = [...state, recipe(action)];
+    recipes = [recipe(action), ...state];
     bake_cookie('recipes', recipes);
     return recipes;
   case DELETE_RECIPE:

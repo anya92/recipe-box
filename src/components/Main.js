@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Main = () => {
-  return <h1>Recipe Box</h1>
-};
+export class Main extends Component {
+  componentDidMount() {
+    document.getElementById('loading').remove();
+  }
+  render() {
+    return (
+      <div>
+        <h1>Recipe Box</h1>
+      </div>
+    );
+  }
+}
 
 export default Main;

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
@@ -19,7 +20,7 @@ const store = createStore(reducer);
 const routes = (
   <Router>
     <div>
-      <Route component={Main} />
+      <Route component={Main}/>
       <Switch>
         <Route exact path="/" component={RecipeGrid}/>
         <Route path="/add" component={AddRecipe}/>
