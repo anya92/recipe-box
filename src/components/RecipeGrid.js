@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LazyLoad from 'react-lazyload';
 import Recipe from './Recipe';
 import { loadRecipes } from '../actions';
 import sampleRecipes from '../sample-recipes';
-
-
-// const Placeholder = () => {
-//   return (
-//     <div className="placeholder"></div>
-//   );
-// };
 
 class RecipeGrid extends Component {
   loadSampleRecipes() {
@@ -31,14 +23,10 @@ class RecipeGrid extends Component {
             </button>
           : <div></div>  
         }
-        <div>
+        <div className="row">
           {
             recipes.map(recipe => {
-              return (
-                <LazyLoad height={200} key={recipe.id}>
-                  <Recipe  recipe={recipe} />
-                </LazyLoad>  
-              );
+              return <Recipe key={recipe.id} recipe={recipe} />;
             })
           }
         </div>

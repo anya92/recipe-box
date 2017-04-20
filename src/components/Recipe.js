@@ -11,7 +11,7 @@ class Recipe extends Component {
   render() {
     const recipe = this.props.recipe;
     return (
-      <div className="item">
+      <div className="col-md-4">
         <Link to={`/recipe/${recipe.id}`}>
           <img src={recipe.image} alt={recipe.title} />
         </Link>

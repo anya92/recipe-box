@@ -1,5 +1,15 @@
-.placeholder {
-  min-height: 200px;
-  width: 400px;
-  background-color: tomato;
-}
+@font-face {
+  font-family: 'Rock Salt';
+  src: url(../../public/fonts/RockSalt.ttf); }
+
+@font-face {
+  font-family: 'Alegreya';
+  src: url(../../public/fonts/Alegreya-Regular.ttf); }
+
+@font-face {
+  font-family: 'Alegreya Bold';
+  src: url(../../public/fonts/Alegreya-Bold.ttf); }
+
+body {
+  font-family: 'Alegreya';
+  background-color: red; }
