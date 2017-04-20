@@ -11,5 +11,24 @@
   src: url(../../public/fonts/Alegreya-Bold.ttf); }
 
 body {
-  font-family: 'Alegreya';
-  background-color: red; }
+  margin: 0 10px;
+  font-family: 'Alegreya', serif;
+  font-size: 17px;
+  background-color: #EEEEEE; }
+
+.hero {
+  margin-top: 30px;
+  font-family: 'Rock Salt', cursive;
+  font-size: 2.5em;
+  text-align: center; }
+
+.hero a {
+  color: black;
+  text-decoration: none; }
+
+.hero hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100px;
+  border-width: 3px;
+  border-color: #bbbbbb; }

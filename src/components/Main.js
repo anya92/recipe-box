@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export class Main extends Component {
   componentDidMount() {
     document.getElementById('loading').remove();
   }
+
   render() {
     return (
-      <div>
-        <h1>Recipe Box</h1>
+      <div className="hero">
+        <Link to="/">Recipe Box</Link>
+        <hr/>
       </div>
     );
   }

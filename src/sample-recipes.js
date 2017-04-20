@@ -1,28 +1,28 @@
 module.exports = [
   {
 		id: '15345',
-		title: 'Spaghetti bolognese',
+		title: 'Spaghetti Bolognese',
 		image: 'https://images.pexels.com/photos/27642/pexels-photo-27642.jpg?h=210&auto=compress&cs=tinysrgb',
 		ingredients: ['makaron', 'mięso mielone', 'pomidory', 'woda', 'tarty żółty ser', 'olej'],
 		description: 'Popisowe danie kuchni włoskiej. Swoją popularność zawdzięcza gęstemu, mięsnemu sosowi, który otacza makaron, zapewniając potrawie wyrazisty pomidorowy smak.'
   },
   {
     id: '39424',
-    title: 'Pieczony łosoś',
+    title: 'Pieczony Łosoś',
 		image: 'https://images.pexels.com/photos/36768/food-salmon-teriyaki-cooking.jpg?h=210&auto=compress&cs=tinysrgb',
 		ingredients: ['filety z łososia', 'cytryna', 'sok z pomarańczy', 'oliwa', 'imbir', 'pieprz czarny'],
 		description: 'Połączenie smacznych rybich filetów z sosem przygotowanym na bazie owoców cytrusowych to doskonała propozycja na wyjątkowe uroczystości.'
 	},
 	{
 		id: '87364',
-		title: 'Kanapka z szynką dojrzewającą',
+		title: 'Kanapka Z Szynką Dojrzewającą',
 		image: 'https://images.pexels.com/photos/7390/pexels-photo.jpg?h=210&auto=compress&cs=tinysrgb',
 		ingredients: ['pieczywo', 'szynka dojrzewająca', 'ser brie', 'pomidorki koktajlowe', 'sałata'],
 		description: 'Kanapka to najprostsza i najszybsza opcja na pyszne śniadanie lub kolację. Można urozmaicić ją o niezwykle smaczne dodatki.'
 	},
 	{
 		id: '23421',
-		title: 'Babeczki z borówkami',
+		title: 'Babeczki Z Borówkami',
 		image: 'https://images.pexels.com/photos/80741/cakes-blueberries-sweets-cookie-80741.jpeg?h=210&auto=compress&cs=tinysrgb',
 		ingredients: ['mąka', 'proszek do pieczenia', 'margaryna', 'cukier', 'jajko', 'borówki'],
 		description: 'Pyszne, puszyste i bardzo aromatyczne babeczki z borówkami. Doskonałe na wycieczkę do lasu, albo do popołudniowej kawy lub herbaty.'
