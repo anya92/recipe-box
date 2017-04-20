@@ -12,6 +12,7 @@
     "bootstrap": "^3.3.7",
     "masonry-layout": "^4.1.1",
     "react": "^15.5.4",
+    "react-addons-update": "^15.5.2",
     "react-dom": "^15.5.4",
     "react-masonry-component": "^5.0.5",
     "react-redux": "^5.0.4",
