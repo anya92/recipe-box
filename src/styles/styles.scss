@@ -41,10 +41,10 @@ body {
 
 a.add-button {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 10px;
+  bottom: 10px;
   z-index: 2;
-  background-color: $add-button-color;
+  background-color: $dark-grey;
   width: 64px;
   height: 64px;
   border-radius: 100%;
@@ -58,7 +58,9 @@ a.add-button {
     color: white;
   }
 }
-
+.recipes {
+  margin-bottom: 40px;
+}
 .recipe-list {
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -77,12 +79,15 @@ a.add-button {
 }
 
 .recipe-title {
+  padding: 10px;
   padding-left: 10px;
-  min-height: 60px;
+  min-height: 70px;
   position: relative;
   h2 {
+    margin-top: 5px;
     font-size: 1.1em;
     display: inline-block;
+    max-width: 85%;
   }
   a {
     display: block;
@@ -99,33 +104,50 @@ a.add-button {
 }
 
 .add {
-  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   h2 {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
+    font-variant: small-caps;
   }
 }
-.add-form {
+form.add-form {
   padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+  margin-bottom: 30px;
   input, textarea {
     border: none;
     border-radius: 0;
-    border-bottom: 1.5px solid #343434;
+    border-bottom: 1.5px solid $dark-grey;
     box-shadow: none;
     padding: 0; 
+    position: relative;
+    font-size: 0.9em;
+    &:focus {
+      box-shadow: none;
+      border-bottom: 2px solid $dark-grey;
+    }
   }
+  label {
+    font-size: 1.1em;
+    font-variant: small-caps;
+  }
+  
 }
 
 .form-buttons {
-  background-color: #343434;
     height: 60px;
   .btn {
+    background-color: $dark-grey;
     color: white;
     font-size: 1.1em;
     min-width: 50%;
     line-height: 50px;
     border-radius: 0;
+  }
+  button {
+
     border-left: 2px solid white;
   }
 }

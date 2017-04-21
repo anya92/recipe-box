@@ -23,7 +23,7 @@ class RecipeGrid extends Component {
             </div>
           : <div></div>  
         }
-        <div className="row">
+        <div className="row recipes">
           {
             recipes.map(recipe => {
               return <Recipe key={recipe.id} recipe={recipe} />;

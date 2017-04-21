@@ -25,14 +25,15 @@ class AddRecipe extends Component {
   render() {
     return (
       <div className="add">
-      <h2>Dodaj nowy przepis</h2>
+      <h2>Dodaj Nowy Przepis</h2>
         <form 
         className="add-form col-md-6 col-md-offset-3"
         onSubmit={e => this.addRecipe(e)}>
           <div className="form-group">
-            <label htmlFor="title">Nazwa potrawy</label>
+          <label htmlFor="title">Nazwa potrawy</label>
             <input type="text" className="form-control" id="title" placeholder="Nazwa" required
               onChange={e => this.setState({ title: e.target.value})}/>
+              
           </div>
           <div className="form-group">
             <label htmlFor="ingredients">Składniki</label>
@@ -51,7 +52,7 @@ class AddRecipe extends Component {
           </div>
           <div className="form-buttons">
             <Link to="/" className="btn">ANULUJ</Link>
-            <a onClick={e => this.addRecipe(e)} className="btn">DODAJ</a>
+            <button type="submit" className="btn">DODAJ</button>
           </div>
         </form>
         
