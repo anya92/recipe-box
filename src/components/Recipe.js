@@ -24,7 +24,7 @@ class Recipe extends Component {
         <Link to={`/recipe/${recipe.id}`}>
           <img src={recipe.image} alt={recipe.title} className="responsive"/>
         </Link>
-        <figcaption className="recipe-title"> 
+        <figcaption className="recipe-title">
         <h2>{recipe.title}</h2>
         <a onClick={() => this.deleteRecipe(recipe.id)}>&#x2715;</a>
         </figcaption>

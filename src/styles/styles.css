@@ -16,7 +16,7 @@ body {
   font-size: 17px; }
 
 .hero {
-  margin-top: 30px;
+  margin-top: 20px;
   height: 60px;
   background-color: white;
   font-family: 'Rock Salt', cursive;
@@ -84,7 +84,7 @@ a.add-button:hover {
 .recipe-title {
   padding: 10px;
   padding-left: 10px;
-  min-height: 70px;
+  min-height: 80px;
   position: relative; }
 
 .recipe-title h2 {
@@ -105,19 +105,26 @@ a.add-button:hover {
   text-decoration: none;
   cursor: pointer; }
 
-.add h2 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.5em;
-  font-variant: small-caps; }
-
-form.add-form {
-  padding: 10px;
+.add-form {
+  padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-top: 20px;
   margin-bottom: 30px; }
 
-form.add-form input, form.add-form textarea {
+.add-form h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-variant: small-caps;
+  margin-top: 5px; }
+
+.add-form img {
+  position: relative;
+  opacity: 0.8;
+  margin-bottom: 6px;
+  max-height: 18px; }
+
+.add-form input, .add-form textarea {
   border: none;
   border-radius: 0;
   border-bottom: 1.5px solid #343434;
@@ -126,11 +133,11 @@ form.add-form input, form.add-form textarea {
   position: relative;
   font-size: 0.9em; }
 
-form.add-form input:focus, form.add-form textarea:focus {
+.add-form input:focus, .add-form textarea:focus {
   box-shadow: none;
   border-bottom: 2px solid #343434; }
 
-form.add-form label {
+.add-form label {
   font-size: 1.1em;
   font-variant: small-caps; }
 
@@ -145,5 +152,76 @@ form.add-form label {
   line-height: 50px;
   border-radius: 0; }
 
+.form-buttons a, .form-buttons .btn-left {
+  border-right: 1px solid white; }
+
 .form-buttons button {
-  border-left: 2px solid white; }
+  border-left: 1px solid white; }
+
+.form-buttons .btn-edit {
+  width: 100%; }
+
+.single-recipe img {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px; }
+
+@media all and (min-width: 768px) {
+  .single-recipe img {
+    width: 50%; } }
+
+.single-recipe figcaption {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 30px; }
+
+.single-recipe figcaption a.btn-back {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 2px solid #343434;
+  background-color: white;
+  color: #343434;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 30px;
+  text-decoration: none;
+  text-align: center; }
+
+.single-recipe figcaption h2 {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.5em; }
+
+.single-recipe figcaption p {
+  margin-top: 10px;
+  text-align: center; }
+
+.single-recipe figcaption h3 {
+  text-align: center;
+  margin-bottom: 10px; }
+
+.single-recipe figcaption a.btn {
+  background-color: #343434;
+  color: white;
+  font-size: 1.1em;
+  min-width: 100%;
+  line-height: 50px;
+  border-radius: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px; }
+
+.single-recipe figcaption img {
+  position: relative;
+  top: -5px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+  max-height: 18px; }

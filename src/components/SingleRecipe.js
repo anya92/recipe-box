@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { editRecipe } from '../actions';
+const cali = require('../../public/images/cali.svg');
 
 class SingleRecipe extends Component {
   constructor(props) {
@@ -26,28 +28,39 @@ class SingleRecipe extends Component {
     const { recipe } = this.props;
     return (
       <div>
-        <a onClick={() => this.setState({ editing: true })}>Edytuj</a>
         {
           !this.state.editing
-          ? <div>
-              <h2>{recipe.title}</h2>
-              <img src={recipe.image} alt={recipe.title} />
-              <p>{recipe.description}</p>
-              <div>
-                {
-                  recipe.ingredients.map((ingredient, i) => {
-                    return (
-                      <p key={i}>{ingredient}</p>
-                    );
-                  })
-                }
-              </div>
-            </div>
+          ? <figure className="row single-recipe">
+         
+              <img className="col-md-6" src={recipe.image} alt={recipe.title} />
+              <figcaption className="col-md-6">
+              <div className="recipe-title">
+                <Link to='/' className="btn-back">&larr;</Link>
+               <h2>{recipe.title}</h2></div>
+          <img src={cali} alt="cali"/>
+
+                <p>{recipe.description}</p>
+                <div>
+                <h3>Składniki</h3>
+                  {
+                    recipe.ingredients.map((ingredient, i) => {
+                      return (
+                         <li key={i}>{ingredient}</li>
+                      );
+                    })
+                 }
+                </div>
+                
+              <a onClick={() => this.setState({ editing: true })} className="btn btn-edit">Edytuj</a>
+              </figcaption>
+            </figure>
           : <div>
               <form 
                 className="add-form col-md-6 col-md-offset-3"
                 onSubmit={(e) => this.editRecipe(e, recipe.id)}
               >
+              <h2>Edytuj Przepis</h2>
+          <img src={cali} alt="cali"/>
           <div className="form-group">
             <label htmlFor="title">Nazwa potrawy</label>
             <input type="text" className="form-control" id="title" defaultValue={recipe.title} name="title"
@@ -65,7 +78,10 @@ class SingleRecipe extends Component {
             <label htmlFor="image">Zdjęcie</label>
             <input type="text" className="form-control" id="image" defaultValue={recipe.image} onChange={e => this.setState({ image: e.target.value})}/>
           </div>
-          <input type="submit" className="btn btn-lg btn-default" />
+          <div className="form-buttons">
+          
+          <button type="submit" className="btn btn-edit">EDYTUJ</button>
+          </div>
         </form>
             </div>
         }
