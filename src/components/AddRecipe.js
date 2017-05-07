@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addRecipe } from '../actions';
-const cali = require('../../public/images/cali.svg');
 
 class AddRecipe extends Component {
   constructor(props) {
@@ -27,15 +26,13 @@ class AddRecipe extends Component {
     return (
       <div>
         <form 
-        className="add-form col-md-6 col-md-offset-3"
-        onSubmit={e => this.addRecipe(e)}>
-      <h2>Dodaj Nowy Przepis</h2>
-          <img src={cali} alt="cali"/>
+          className="add-form col-md-6 col-md-offset-3"
+          onSubmit={e => this.addRecipe(e)}
+        >
+          <h2>Dodaj Nowy Przepis</h2>
           <div className="form-group">
-          <label htmlFor="title">Nazwa potrawy</label>
-            <input type="text" className="form-control" id="title" placeholder="Nazwa" required
-              onChange={e => this.setState({ title: e.target.value})}/>
-              
+            <label htmlFor="title">Nazwa potrawy</label>
+            <input type="text" className="form-control" id="title" placeholder="Nazwa" required onChange={e => this.setState({ title: e.target.value})}/>
           </div>
           <div className="form-group">
             <label htmlFor="ingredients">Składniki</label>
@@ -57,7 +54,6 @@ class AddRecipe extends Component {
             <button type="submit" className="btn">DODAJ</button>
           </div>
         </form>
-        
       </div>
     );
   }

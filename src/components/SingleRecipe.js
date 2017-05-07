@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { editRecipe } from '../actions';
-const cali = require('../../public/images/cali.svg');
 
 class SingleRecipe extends Component {
   constructor(props) {
@@ -19,7 +18,8 @@ class SingleRecipe extends Component {
 
   editRecipe(event, id) {
     event.preventDefault();
-    const ingredients = Array.from(this.state.ingredients);
+    console.log(typeof this.state.ingredients);
+    const ingredients = typeof this.state.ingredients === 'string' ? (this.state.ingredients).split(',') : this.state.ingredients;
     this.props.editRecipe(this.state.title, this.state.image, ingredients, this.state.description, id);
     this.setState({ editing: false });
   }
@@ -30,17 +30,15 @@ class SingleRecipe extends Component {
       <div>
         {
           !this.state.editing
-          ? <figure className="row single-recipe">
-         
-              <img className="col-md-6" src={recipe.image} alt={recipe.title} />
-              <figcaption className="col-md-6">
+          ? <figure className="single-recipe col-md-6 col-md-offset-3">
+              <img className="responsive" src={recipe.image} alt={recipe.title} />
+              <figcaption className="">
               <div className="recipe-title">
-                <Link to='/' className="btn-back">&larr;</Link>
+                <Link to='/' className="btn-back">&lt;</Link>
                <h2>{recipe.title}</h2></div>
-          <img src={cali} alt="cali"/>
-
+               <hr/>
                 <p>{recipe.description}</p>
-                <div>
+                <div><hr/>
                 <h3>Składniki</h3>
                   {
                     recipe.ingredients.map((ingredient, i) => {
@@ -54,13 +52,13 @@ class SingleRecipe extends Component {
               <a onClick={() => this.setState({ editing: true })} className="btn btn-edit">Edytuj</a>
               </figcaption>
             </figure>
-          : <div>
+            // editing 
+          : <div> 
               <form 
                 className="add-form col-md-6 col-md-offset-3"
                 onSubmit={(e) => this.editRecipe(e, recipe.id)}
               >
               <h2>Edytuj Przepis</h2>
-          <img src={cali} alt="cali"/>
           <div className="form-group">
             <label htmlFor="title">Nazwa potrawy</label>
             <input type="text" className="form-control" id="title" defaultValue={recipe.title} name="title"

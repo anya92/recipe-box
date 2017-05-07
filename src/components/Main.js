@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 
 export class Main extends Component {
   componentDidMount() {
-    document.getElementById('loading').remove();
+    setTimeout(() => {
+      document.getElementById('loading').remove();
+    }, 1500);
   }
 
   render() {
     return (
-      
       <div className="hero">
         <Link to="/">Recipe Box</Link>
       </div>
